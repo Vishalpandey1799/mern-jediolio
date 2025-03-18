@@ -9,6 +9,7 @@ import AllData from "../../Skeleton/AllData.jsx";
 
 const Create = () => {
   const cloudname = import.meta.env.VITE_CLOUD_NAME;
+
   const navigate = useNavigate();
   const { createPortfolio, isCreating, newSlug, getUser } = Apicalls();
 
@@ -21,6 +22,7 @@ const Create = () => {
   });
 
   const [socialLinks, setSocialLinks] = useState([""]);
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +33,8 @@ const Create = () => {
     const file = e.target.files[0];
 
     if (!file) return;
+
+    setIsUploading(true); 
 
     const formData = new FormData();
     formData.append("file", file);
@@ -47,14 +51,19 @@ const Create = () => {
 
       const data = await response.json();
 
-      if(!data) return toast.error("Wait for a while...")
+      if (!data) {
+        toast.error("Wait for a while...");
+        setIsUploading(false);
+        return;
+      }
 
       if (data.secure_url) {
         setForm((prev) => ({ ...prev, profileImage: data.secure_url }));
       }
     } catch (error) {
-      
       toast.error("Image upload failed. Try again.");
+    } finally {
+      setIsUploading(false);  
     }
   };
 
@@ -93,9 +102,6 @@ const Create = () => {
       return;
     }
 
-   
-    
-    
     const formData = {
       name: form.name,
       bio: form.bio,
@@ -111,7 +117,6 @@ const Create = () => {
 
       toast.success("Profile created successfully! 🎉");
     } catch (error) {
-      console.log(error);
       toast.error("Failed to create profile. Please try again.");
     }
   };
@@ -227,8 +232,13 @@ const Create = () => {
           <button
             className="w-full bg-fuchsia-900 text-white py-3 font-medium hover:bg-black transition flex items-center justify-center cursor-pointer"
             onClick={handleSubmit}
+            disabled={isUploading || isCreating}
           >
-            {isCreating ? (
+            {isUploading ? (
+              <>
+                <span>Please wait...</span> <Loader className="animate-spin ml-2" />
+              </>
+            ) : isCreating ? (
               <>
                 <span>Creating</span> <Loader className="animate-spin ml-2" />
               </>
