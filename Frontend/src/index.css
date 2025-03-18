@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes breathe {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-breathe {
+    animation: breathe 2.5s infinite ease-in-out;
+}
+
+.animate-blink {
+    animation: blink 1.5s infinite ease-in-out;
+}
+
+button{
+    cursor: pointer;
+}
