@@ -42,7 +42,7 @@ const Link = () => {
       </div>
 
       <div className="flex items-center space-x-2 bg-gray-700 p-3 rounded-lg">
-        <p className="text-sm break-all">{`http://localhost:5173/user/portfolio/${newSlug}`}</p>
+        <p className="text-sm break-all">{`https://jediolio.vercel.app/user/portfolio/${newSlug}`}</p>
         {copied && (
           <span className="text-xs text-green-400 animate-pulse">Copied!</span>
         )}
