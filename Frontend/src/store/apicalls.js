@@ -17,9 +17,8 @@ const Apicalls = create((set, get) => ({
       const res = await axiosInstance.get("/allreview");
       set({ isReview: true, allreview: res.data, isLoading: false });
     } catch (error) {
-      console.log("Error in all reviews:", error.message);
       set({ isLoading: false });
-      toast.error("Failed to fetch reviews. Please try again.");
+
     }
   },
 

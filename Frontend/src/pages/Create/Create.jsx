@@ -47,6 +47,8 @@ const Create = () => {
 
       const data = await response.json();
 
+      if(!data) return toast.error("Wait for a while...")
+
       if (data.secure_url) {
         setForm((prev) => ({ ...prev, profileImage: data.secure_url }));
       }
@@ -91,6 +93,8 @@ const Create = () => {
       return;
     }
 
+
+    
     const formData = {
       name: form.name,
       bio: form.bio,
