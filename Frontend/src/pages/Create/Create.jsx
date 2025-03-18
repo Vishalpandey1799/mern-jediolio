@@ -52,7 +52,6 @@ const Create = () => {
       const data = await response.json();
 
       if (!data) {
-        toast.error("Wait for a while...");
         setIsUploading(false);
         return;
       }

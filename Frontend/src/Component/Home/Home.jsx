@@ -1,11 +1,10 @@
-import { motion } from "framer-motion";  
+import { motion } from "framer-motion";
 import DemoProfile from "../DemoProfile/DemoProfile";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,8 +48,8 @@ const Home = () => {
           onClick={() => navigate("/create")}
           className="mt-6 px-8 py-3 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
           variants={childVariants}
-          whileHover={{ scale: 1.05 }}  
-          whileTap={{ scale: 0.95 }}  
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           Get Yours 🚀
         </motion.button>

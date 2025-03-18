@@ -9,7 +9,7 @@ import Review from "./pages/Review/Review";
 import ImageUpload from "./pages/Create/ImageUpload";
 import DevPortfolio from "./pages/devPortfolio/devPortfolio";
 import NotFound from "./pages/NotFound";
- 
+
 const App = () => {
   const location = useLocation();
   const isPortfolioRoute = location.pathname.startsWith("/user/portfolio/");
