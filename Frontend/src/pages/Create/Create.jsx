@@ -8,6 +8,7 @@ import Allske from "../../Skeleton/Allske.jsx";
 import AllData from "../../Skeleton/AllData.jsx";
 
 const Create = () => {
+  const cloudname = import.meta.env.VITE_CLOUD_NAME;
   const navigate = useNavigate();
   const { createPortfolio, isCreating, newSlug, getUser } = Apicalls();
 
@@ -37,7 +38,7 @@ const Create = () => {
 
     try {
       const response = await fetch(
-        "https://api.cloudinary.com/v1_1/diidb8azs/image/upload",
+        `https://api.cloudinary.com/v1_1/${cloudname}/image/upload`,
         {
           method: "POST",
           body: formData,
