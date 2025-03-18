@@ -6,13 +6,12 @@ import Apicalls from "../store/apicalls.js";
 const Link = () => {
   const [copied, setCopied] = useState(false);
   const { newSlug } = Apicalls();
-  
 
   if (!newSlug) return;
 
   const handleCopyClick = () => {
     navigator.clipboard
-      .writeText(`http://localhost:5173/user/portfolio/${newSlug}`)
+      .writeText(`https://jediolio.vercel.app/user/portfolio/${newSlug}`)
       .then(() => {
         setCopied(true);
         toast.success("Link copied to clipboard! 🎉");
