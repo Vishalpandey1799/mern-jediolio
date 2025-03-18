@@ -93,7 +93,8 @@ const Create = () => {
       return;
     }
 
-
+   
+    console.log(form)
     
     const formData = {
       name: form.name,
