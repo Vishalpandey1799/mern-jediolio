@@ -22,7 +22,7 @@ const DevPortfolio = () => {
       }
     };
     fetchUserData();
-  }, [slug]); // Removed getUser from dependencies to prevent unnecessary re-renders
+  }, [slug]); 
 
   useEffect(() => {
     if (userData?.socialLinks) {
