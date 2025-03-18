@@ -53,7 +53,7 @@ const Create = () => {
         setForm((prev) => ({ ...prev, profileImage: data.secure_url }));
       }
     } catch (error) {
-      console.log(error);
+      
       toast.error("Image upload failed. Try again.");
     }
   };
@@ -94,7 +94,7 @@ const Create = () => {
     }
 
    
-    console.log(form)
+    
     
     const formData = {
       name: form.name,
