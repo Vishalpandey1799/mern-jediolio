@@ -22,7 +22,7 @@ const DevPortfolio = () => {
       }
     };
     fetchUserData();
-  }, [slug]); 
+  }, [slug]);
 
   useEffect(() => {
     if (userData?.socialLinks) {
@@ -79,7 +79,7 @@ const DevPortfolio = () => {
               {userData.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="bg-gray-200 px-3 py-1 rounded-full text-xs text-gray-700"
+                  className="bg-gray-200 px-3 py-1 rounded-full text-xs text-gray-700 hover:bg-blue-700 cursor-pointer"
                 >
                   {skill}
                 </span>
