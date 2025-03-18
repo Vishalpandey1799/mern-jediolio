@@ -30,7 +30,6 @@ const QrCode = () => {
     };
   }, [userData?.profileImage]);
 
-  // Download QR code as PNG
   const downloadQRCode = () => {
     const qrCodeElement = qrCodeRef.current;
 
@@ -39,12 +38,11 @@ const QrCode = () => {
 
       const link = document.createElement("a");
       link.href = imageUrl;
-      link.download = "qrcode.png";
+      link.download = `${userData.name}`;
       link.click();
     });
   };
 
-  // If newSlug or userData is not available, render nothing
   if (!newSlug || !userData) {
     return null;
   }
