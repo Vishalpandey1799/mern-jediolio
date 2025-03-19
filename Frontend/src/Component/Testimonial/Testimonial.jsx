@@ -36,7 +36,7 @@ const Testimonial = () => {
                                 viewport={{ once: true }}
                                 className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
                             >
-                                <div className="flex gap-3 items-center">
+                                <div className="flex gap-3 items-center" onClick={(e) => e.target}>
                                     <motion.img
                                         src={testimonial.profileImage || "/default-profile.png"}
                                         alt={testimonial.name || "User"}

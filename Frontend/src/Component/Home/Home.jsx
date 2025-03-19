@@ -34,7 +34,7 @@ const Home = () => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight"
           variants={childVariants}
         >
-          Build your <span className="text-blue-600">Portfolio</span> Instantly
+          Build your <span className="text-blue-600">Profile-card</span> Instantly
         </motion.h1>
 
         <motion.p
