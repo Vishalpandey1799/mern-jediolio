@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Component/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import Homelayout from "./Component/Homelayout";
-import About from "./pages/About/About";
+// import About from "./pages/About/About";
 import Create from "./pages/Create/Create";
 import Footer from "./Component/Footer/Footer";
 import Review from "./pages/Review/Review";
@@ -20,7 +20,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Homelayout />} />
-        <Route path="/about" element={<About />} />
+{/*         <Route path="/about" element={<About />} /> */}
         <Route path="/create" element={<Create />} />
         <Route path="/review" element={<Review />} />
         <Route path="/image-upload" element={<ImageUpload />} />
