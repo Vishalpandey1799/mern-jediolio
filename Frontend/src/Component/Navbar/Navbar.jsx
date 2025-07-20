@@ -119,13 +119,13 @@ const Navbar = () => {
           >
             Review
           </Link>
-          <Link
+{/*           <Link
             to="/about"
             className="nav-link"
             onClick={() => setIsOpen(false)}
           >
             About
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>
